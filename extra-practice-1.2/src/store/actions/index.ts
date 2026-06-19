@@ -1,1 +1,1 @@
-export * from 'store/actions/users';
+export * from '../../store/actions/users';

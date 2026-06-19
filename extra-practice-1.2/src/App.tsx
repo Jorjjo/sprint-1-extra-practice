@@ -1,11 +1,11 @@
 import {Fragment, useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectUsers, selectUsersCount} from 'store/selectors';
-import {createUser, plusUserCount} from 'store/actions';
+import {selectUsers, selectUsersCount} from './store/selectors';
+import {createUser, plusUserCount} from './store/actions';
 import {v1} from 'uuid';
-import {CustomButton, UsersCountValue} from 'components';
-import {UsersList} from 'components/UsersList';
-import {generateRandomName} from 'utils';
+import {CustomButton, UsersCountValue} from './components';
+import {UsersList} from './components/UsersList';
+import {generateRandomName} from './utils';
 import {SetTimeoutType} from 'types';
 
 const DELAY = 500;
@@ -33,6 +33,7 @@ export const App = () => {
   }, [dispatch, users.length, isAddNewUser]);
 
   const handleClick = useCallback((): void => {
+    debugger
     dispatch(createUser({id: v1(), name: generateRandomName()}));
 
     setIsAddNewUser(true);

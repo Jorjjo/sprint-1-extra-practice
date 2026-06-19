@@ -1,11 +1,9 @@
-import {FC, memo} from 'react';
+import { FC, memo } from 'react';
 
 type PropsType = {
-  usersCount: number;
+    usersCount: number;
 };
 
-export const UsersCountValue: FC<PropsType> = memo(({usersCount}) => {
-  const newUsersCount = usersCount + 1;
-
-  return <span>Users count: {newUsersCount}</span>;
+export const UsersCountValue: FC<PropsType> = memo(({ usersCount }) => {
+    return <span>Users count: {usersCount}</span>;
 });
